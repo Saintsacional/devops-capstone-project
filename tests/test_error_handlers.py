@@ -1,11 +1,7 @@
 # tests/test_error_handlers.py
-import json
-import importlib
-import logging
-import types
+
 
 import unittest
-from flask import Flask
 
 # Import the real app and handlers from your package
 from service import app as real_app
@@ -23,7 +19,9 @@ class TestErrorHandlers(unittest.TestCase):
         self.app.testing = True
         self.client = self.app.test_client()
 
-    def _assert_json(self, resp, expected_status, expected_error, expected_message_substr):
+    def _assert_json(
+        self, resp, expected_status, expected_error, expected_message_substr
+    ):
         self.assertEqual(resp[1], expected_status)
         payload = resp[0].get_json()
         self.assertEqual(payload["status"], expected_status)
