@@ -1,6 +1,4 @@
 # tests/test_error_handlers.py
-
-
 import unittest
 
 # Import the real app and handlers from your package
