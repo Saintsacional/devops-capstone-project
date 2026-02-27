@@ -19,4 +19,3 @@ assignees: ""
 Given [some context]  
 When [an action is taken]  
 Then [the outcome is observed]
-``
